@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "HMSegmentedControl.h"
 
 @interface FirstViewController ()
 {
@@ -24,11 +25,32 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
+
     titlearray = [[NSMutableArray alloc]initWithObjects:@"One", @"two", @"three",nil];
     subtitlearray = [[NSMutableArray alloc]initWithObjects:@"1", @"2", @"3", nil];
     
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    //Create the communication and private feature to switch
+    self.comm_priv_View.center = self.view.superview.center;
+    CGFloat viewWidth = CGRectGetWidth(self.view.frame);
+    HMSegmentedControl *segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Community", @"Private"]];
+    segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+    segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
+    segmentedControl.frame = CGRectMake(0, 20, viewWidth, 40);
+    segmentedControl.autoresizingMask =  (UIViewAutoresizingFlexibleLeftMargin   |
+        UIViewAutoresizingFlexibleRightMargin  |
+        UIViewAutoresizingFlexibleTopMargin    |
+        UIViewAutoresizingFlexibleBottomMargin);
+    [segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
+    [self.comm_priv_View addSubview:segmentedControl];
+    
+    //[self setNeedsStatusBarAppearanceUpdate];
+
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -83,4 +105,21 @@
     }
 
 }
+
+- (void)segmentedControlChangedValue:(HMSegmentedControl *)segmentedControl {
+    if (segmentedControl.selectedSegmentIndex == 1) {
+        _firstView.text = @"Private";
+        titlearray = [[NSMutableArray alloc]initWithObjects:@"Private Friend 1", @"Private Friend 2", @"Private Friend 3",nil];
+        subtitlearray = [[NSMutableArray alloc]initWithObjects:@"1 friend", @"2 friend", @"3 friend", nil];
+        [self.tableView reloadData];
+    }
+    else {
+        _firstView.text = @"community";
+        titlearray = [[NSMutableArray alloc]initWithObjects:@"One", @"two", @"three",nil];
+        subtitlearray = [[NSMutableArray alloc]initWithObjects:@"1", @"2", @"3", nil];
+        [self.tableView reloadData];
+    }
+
+}
+
 @end

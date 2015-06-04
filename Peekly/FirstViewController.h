@@ -12,6 +12,8 @@
 - (IBAction)segmentController:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *firstView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *comm_priv_View;
+
 
 @end
 

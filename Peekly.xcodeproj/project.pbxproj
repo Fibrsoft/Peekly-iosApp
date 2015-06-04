@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A28E18091B20B4F000404801 /* CaviarDreams.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A28E18081B20B4F000404801 /* CaviarDreams.ttf */; };
+		A28E180B1B20B5C000404801 /* CaviarDreams_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A28E180A1B20B5C000404801 /* CaviarDreams_Bold.ttf */; };
+		A28E180F1B20B88E00404801 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A28E180E1B20B88E00404801 /* QuartzCore.framework */; };
+		A28E18121B20B91300404801 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A28E18111B20B91300404801 /* HMSegmentedControl.m */; };
+		A28E18141B20C3FD00404801 /* PeeklyTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A28E18131B20C3FD00404801 /* PeeklyTableCell.xib */; };
 		A2E60B671B1FD61C008F3AE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E60B661B1FD61C008F3AE1 /* main.m */; };
 		A2E60B6A1B1FD61C008F3AE1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E60B691B1FD61C008F3AE1 /* AppDelegate.m */; };
 		A2E60B6D1B1FD61C008F3AE1 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E60B6C1B1FD61C008F3AE1 /* FirstViewController.m */; };
@@ -28,7 +33,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A2E45F7C1B20990600E1E79D /* CaviarDreams.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams.ttf; sourceTree = "<group>"; };
+		A28E18081B20B4F000404801 /* CaviarDreams.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams.ttf; path = ../CaviarDreams.ttf; sourceTree = "<group>"; };
+		A28E180A1B20B5C000404801 /* CaviarDreams_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams_Bold.ttf; sourceTree = "<group>"; };
+		A28E180E1B20B88E00404801 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A28E18101B20B91300404801 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMSegmentedControl.h; path = "../../../Downloads/HMSegmentedControl-master/HMSegmentedControl/HMSegmentedControl.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		A28E18111B20B91300404801 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMSegmentedControl.m; path = "../../../Downloads/HMSegmentedControl-master/HMSegmentedControl/HMSegmentedControl.m"; sourceTree = "<group>"; };
+		A28E18131B20C3FD00404801 /* PeeklyTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeeklyTableCell.xib; sourceTree = "<group>"; };
 		A2E60B611B1FD61C008F3AE1 /* Peekly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peekly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E60B651B1FD61C008F3AE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2E60B661B1FD61C008F3AE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A28E180F1B20B88E00404801 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +78,7 @@
 		A2E60B581B1FD61C008F3AE1 = {
 			isa = PBXGroup;
 			children = (
+				A28E180E1B20B88E00404801 /* QuartzCore.framework */,
 				A2E60B631B1FD61C008F3AE1 /* Peekly */,
 				A2E60B801B1FD61C008F3AE1 /* PeeklyTests */,
 				A2E60B621B1FD61C008F3AE1 /* Products */,
@@ -85,6 +97,8 @@
 		A2E60B631B1FD61C008F3AE1 /* Peekly */ = {
 			isa = PBXGroup;
 			children = (
+				A28E18101B20B91300404801 /* HMSegmentedControl.h */,
+				A28E18111B20B91300404801 /* HMSegmentedControl.m */,
 				A2E60B681B1FD61C008F3AE1 /* AppDelegate.h */,
 				A2E60B691B1FD61C008F3AE1 /* AppDelegate.m */,
 				A2E60B6B1B1FD61C008F3AE1 /* FirstViewController.h */,
@@ -92,6 +106,7 @@
 				A2E60B6E1B1FD61C008F3AE1 /* SecondViewController.h */,
 				A2E60B6F1B1FD61C008F3AE1 /* SecondViewController.m */,
 				A2E60B711B1FD61C008F3AE1 /* Main.storyboard */,
+				A28E18131B20C3FD00404801 /* PeeklyTableCell.xib */,
 				A2E60B741B1FD61C008F3AE1 /* Images.xcassets */,
 				A2E60B761B1FD61C008F3AE1 /* LaunchScreen.xib */,
 				A2E60B641B1FD61C008F3AE1 /* Supporting Files */,
@@ -102,7 +117,8 @@
 		A2E60B641B1FD61C008F3AE1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A2E45F7C1B20990600E1E79D /* CaviarDreams.ttf */,
+				A28E180A1B20B5C000404801 /* CaviarDreams_Bold.ttf */,
+				A28E18081B20B4F000404801 /* CaviarDreams.ttf */,
 				A2E60B651B1FD61C008F3AE1 /* Info.plist */,
 				A2E60B661B1FD61C008F3AE1 /* main.m */,
 			);
@@ -208,6 +224,9 @@
 			files = (
 				A2E60B731B1FD61C008F3AE1 /* Main.storyboard in Resources */,
 				A2E60B781B1FD61C008F3AE1 /* LaunchScreen.xib in Resources */,
+				A28E18141B20C3FD00404801 /* PeeklyTableCell.xib in Resources */,
+				A28E180B1B20B5C000404801 /* CaviarDreams_Bold.ttf in Resources */,
+				A28E18091B20B4F000404801 /* CaviarDreams.ttf in Resources */,
 				A2E60B751B1FD61C008F3AE1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +249,7 @@
 				A2E60B6A1B1FD61C008F3AE1 /* AppDelegate.m in Sources */,
 				A2E60B6D1B1FD61C008F3AE1 /* FirstViewController.m in Sources */,
 				A2E60B671B1FD61C008F3AE1 /* main.m in Sources */,
+				A28E18121B20B91300404801 /* HMSegmentedControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

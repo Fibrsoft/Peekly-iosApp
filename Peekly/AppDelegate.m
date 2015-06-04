@@ -16,6 +16,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    UINavigationController navigationController;
+    navigationController.NavigationBar.TintColor = UIColor.White;
+    navigationController.NavigationBar.BarTintColor = UIColor.FromRGB(52,152,219);
     // Override point for customization after application launch.
     return YES;
 }

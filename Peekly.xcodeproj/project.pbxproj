@@ -16,10 +16,16 @@
 		A2E60B6A1B1FD61C008F3AE1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E60B691B1FD61C008F3AE1 /* AppDelegate.m */; };
 		A2E60B6D1B1FD61C008F3AE1 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E60B6C1B1FD61C008F3AE1 /* FirstViewController.m */; };
 		A2E60B701B1FD61C008F3AE1 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E60B6F1B1FD61C008F3AE1 /* SecondViewController.m */; };
-		A2E60B731B1FD61C008F3AE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2E60B711B1FD61C008F3AE1 /* Main.storyboard */; };
 		A2E60B751B1FD61C008F3AE1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2E60B741B1FD61C008F3AE1 /* Images.xcassets */; };
 		A2E60B781B1FD61C008F3AE1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E60B761B1FD61C008F3AE1 /* LaunchScreen.xib */; };
 		A2E60B841B1FD61C008F3AE1 /* PeeklyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E60B831B1FD61C008F3AE1 /* PeeklyTests.m */; };
+		A2F632601B210E8F005134A9 /* MyGroups_ToolbarIcon_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F6325F1B210E8F005134A9 /* MyGroups_ToolbarIcon_2x.png */; };
+		A2F632621B211460005134A9 /* TAMU.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A2F632611B211460005134A9 /* TAMU.jpg */; };
+		A2F632661B212EED005134A9 /* More_ToolbarIcon_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F632631B212EED005134A9 /* More_ToolbarIcon_2x.png */; };
+		A2F632671B212EED005134A9 /* MyStuff_ToolbarIcon_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F632641B212EED005134A9 /* MyStuff_ToolbarIcon_2x.png */; };
+		A2F632681B212EED005134A9 /* Trends_ToolbarIcon_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F632651B212EED005134A9 /* Trends_ToolbarIcon_2x.png */; };
+		A2F632701B215990005134A9 /* Peekly_LaunchImage_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F6326F1B215990005134A9 /* Peekly_LaunchImage_2x.png */; };
+		A2F632731B215ADC005134A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F632711B215ADC005134A9 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,12 +54,18 @@
 		A2E60B6C1B1FD61C008F3AE1 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		A2E60B6E1B1FD61C008F3AE1 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		A2E60B6F1B1FD61C008F3AE1 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		A2E60B721B1FD61C008F3AE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A2E60B741B1FD61C008F3AE1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A2E60B771B1FD61C008F3AE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A2E60B7D1B1FD61C008F3AE1 /* PeeklyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeeklyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E60B821B1FD61C008F3AE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2E60B831B1FD61C008F3AE1 /* PeeklyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeeklyTests.m; sourceTree = "<group>"; };
+		A2F6325F1B210E8F005134A9 /* MyGroups_ToolbarIcon_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MyGroups_ToolbarIcon_2x.png; path = ../../../Downloads/MyGroups_ToolbarIcon_2x.png; sourceTree = "<group>"; };
+		A2F632611B211460005134A9 /* TAMU.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = TAMU.jpg; path = ../../../Desktop/TAMU.jpg; sourceTree = "<group>"; };
+		A2F632631B212EED005134A9 /* More_ToolbarIcon_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = More_ToolbarIcon_2x.png; path = "../../../Downloads/documents-export-2015-06-04 (1)/More_ToolbarIcon_2x.png"; sourceTree = "<group>"; };
+		A2F632641B212EED005134A9 /* MyStuff_ToolbarIcon_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MyStuff_ToolbarIcon_2x.png; path = "../../../Downloads/documents-export-2015-06-04 (1)/MyStuff_ToolbarIcon_2x.png"; sourceTree = "<group>"; };
+		A2F632651B212EED005134A9 /* Trends_ToolbarIcon_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Trends_ToolbarIcon_2x.png; path = "../../../Downloads/documents-export-2015-06-04 (1)/Trends_ToolbarIcon_2x.png"; sourceTree = "<group>"; };
+		A2F6326F1B215990005134A9 /* Peekly_LaunchImage_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Peekly_LaunchImage_2x.png; path = ../../../Downloads/Peekly_LaunchImage_2x.png; sourceTree = "<group>"; };
+		A2F632721B215ADC005134A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +116,8 @@
 				A2E60B6B1B1FD61C008F3AE1 /* FirstViewController.h */,
 				A2E60B6C1B1FD61C008F3AE1 /* FirstViewController.m */,
 				A2E60B6E1B1FD61C008F3AE1 /* SecondViewController.h */,
+				A2F632711B215ADC005134A9 /* Main.storyboard */,
 				A2E60B6F1B1FD61C008F3AE1 /* SecondViewController.m */,
-				A2E60B711B1FD61C008F3AE1 /* Main.storyboard */,
 				A28E18131B20C3FD00404801 /* PeeklyTableCell.xib */,
 				A2E60B741B1FD61C008F3AE1 /* Images.xcassets */,
 				A2E60B761B1FD61C008F3AE1 /* LaunchScreen.xib */,
@@ -117,6 +129,12 @@
 		A2E60B641B1FD61C008F3AE1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A2F6326F1B215990005134A9 /* Peekly_LaunchImage_2x.png */,
+				A2F632631B212EED005134A9 /* More_ToolbarIcon_2x.png */,
+				A2F632641B212EED005134A9 /* MyStuff_ToolbarIcon_2x.png */,
+				A2F632651B212EED005134A9 /* Trends_ToolbarIcon_2x.png */,
+				A2F632611B211460005134A9 /* TAMU.jpg */,
+				A2F6325F1B210E8F005134A9 /* MyGroups_ToolbarIcon_2x.png */,
 				A28E180A1B20B5C000404801 /* CaviarDreams_Bold.ttf */,
 				A28E18081B20B4F000404801 /* CaviarDreams.ttf */,
 				A2E60B651B1FD61C008F3AE1 /* Info.plist */,
@@ -191,6 +209,7 @@
 				TargetAttributes = {
 					A2E60B601B1FD61C008F3AE1 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = D65JCP37ZB;
 					};
 					A2E60B7C1B1FD61C008F3AE1 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -222,12 +241,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2E60B731B1FD61C008F3AE1 /* Main.storyboard in Resources */,
+				A2F632621B211460005134A9 /* TAMU.jpg in Resources */,
 				A2E60B781B1FD61C008F3AE1 /* LaunchScreen.xib in Resources */,
+				A2F632671B212EED005134A9 /* MyStuff_ToolbarIcon_2x.png in Resources */,
+				A2F632731B215ADC005134A9 /* Main.storyboard in Resources */,
 				A28E18141B20C3FD00404801 /* PeeklyTableCell.xib in Resources */,
+				A2F632601B210E8F005134A9 /* MyGroups_ToolbarIcon_2x.png in Resources */,
 				A28E180B1B20B5C000404801 /* CaviarDreams_Bold.ttf in Resources */,
+				A2F632701B215990005134A9 /* Peekly_LaunchImage_2x.png in Resources */,
 				A28E18091B20B4F000404801 /* CaviarDreams.ttf in Resources */,
+				A2F632681B212EED005134A9 /* Trends_ToolbarIcon_2x.png in Resources */,
 				A2E60B751B1FD61C008F3AE1 /* Images.xcassets in Resources */,
+				A2F632661B212EED005134A9 /* More_ToolbarIcon_2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,20 +297,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A2E60B711B1FD61C008F3AE1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A2E60B721B1FD61C008F3AE1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A2E60B761B1FD61C008F3AE1 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A2E60B771B1FD61C008F3AE1 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		A2F632711B215ADC005134A9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2F632721B215ADC005134A9 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -375,9 +400,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Peekly/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -385,9 +413,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Peekly/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

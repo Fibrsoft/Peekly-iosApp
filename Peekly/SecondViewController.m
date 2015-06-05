@@ -16,6 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"CaviarDreams" size:28], NSFontAttributeName,
+      [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

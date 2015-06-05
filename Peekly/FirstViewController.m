@@ -23,30 +23,58 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-
+    
+    [_comm_priv_View setAutoresizesSubviews:TRUE];
+    
+    
+    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+    CGRect newFrame = _comm_priv_View.frame;
+    newFrame.size.width = width;
+    [_comm_priv_View setFrame:newFrame];
+    
+    
+    
+    
     titlearray = [[NSMutableArray alloc]initWithObjects:@"One", @"two", @"three",nil];
     subtitlearray = [[NSMutableArray alloc]initWithObjects:@"1", @"2", @"3", nil];
     
-    
     //Create the communication and private feature to switch
-    self.comm_priv_View.center = self.view.superview.center;
-    CGFloat viewWidth = CGRectGetWidth(self.view.frame);
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat viewWidth = screenRect.size.width;
     HMSegmentedControl *segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Community", @"Private"]];
     segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
     segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
+    segmentedControl.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithRed:(72/255.0) green:(167/255.0) blue:(192/255.0) alpha:1]};
+    segmentedControl.verticalDividerEnabled = YES;
+    segmentedControl.verticalDividerColor = [UIColor grayColor];
+    segmentedControl.verticalDividerWidth = 1.0f;
     segmentedControl.frame = CGRectMake(0, 20, viewWidth, 40);
-    segmentedControl.autoresizingMask =  (UIViewAutoresizingFlexibleLeftMargin   |
-        UIViewAutoresizingFlexibleRightMargin  |
-        UIViewAutoresizingFlexibleTopMargin    |
-        UIViewAutoresizingFlexibleBottomMargin);
+    [segmentedControl setAutoresizingMask: UIViewAutoresizingFlexibleLeftMargin   |
+                                           UIViewAutoresizingFlexibleRightMargin  |
+                                           UIViewAutoresizingFlexibleTopMargin    |
+                                           UIViewAutoresizingFlexibleBottomMargin |
+                                            UIViewAutoresizingFlexibleWidth];
     [segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
     [self.comm_priv_View addSubview:segmentedControl];
+
     
     //[self setNeedsStatusBarAppearanceUpdate];
 
 }
+
+-(void)awakeFromNib {
+    [[UINavigationBar appearance] setFrame:CGRectMake(0, 0, 320, 500)];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(72/255.0) green:(167/255.0) blue:(192/255.0) alpha:1]];
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"CaviarDreams" size:28], NSFontAttributeName,
+      [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
+}
+
+
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
@@ -70,6 +98,11 @@
     cell.textLabel.text = [titlearray objectAtIndex:indexPath.row];
     
     cell.detailTextLabel.text = [subtitlearray objectAtIndex:indexPath.row];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TAMU.jpg"]]; //changing every background cell to be this image
+    imageView.alpha = 0.5; //opacity of the cell
+    cell.backgroundView = imageView; //setting the cell to be this image
+    
+    
     
     return cell;
     
@@ -108,7 +141,6 @@
 
 - (void)segmentedControlChangedValue:(HMSegmentedControl *)segmentedControl {
     if (segmentedControl.selectedSegmentIndex == 1) {
-        _firstView.text = @"Private";
         titlearray = [[NSMutableArray alloc]initWithObjects:@"Private Friend 1", @"Private Friend 2", @"Private Friend 3",nil];
         subtitlearray = [[NSMutableArray alloc]initWithObjects:@"1 friend", @"2 friend", @"3 friend", nil];
         [self.tableView reloadData];

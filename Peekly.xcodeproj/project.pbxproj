@@ -26,6 +26,8 @@
 		A2F632681B212EED005134A9 /* Trends_ToolbarIcon_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F632651B212EED005134A9 /* Trends_ToolbarIcon_2x.png */; };
 		A2F632701B215990005134A9 /* Peekly_LaunchImage_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F6326F1B215990005134A9 /* Peekly_LaunchImage_2x.png */; };
 		A2F632731B215ADC005134A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F632711B215ADC005134A9 /* Main.storyboard */; };
+		A2F632761B216BB7005134A9 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F632751B216BB7005134A9 /* ThirdViewController.m */; };
+		A2F6327C1B216CC6005134A9 /* UIViewController+FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F6327B1B216CC6005134A9 /* UIViewController+FourthViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		A2F632651B212EED005134A9 /* Trends_ToolbarIcon_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Trends_ToolbarIcon_2x.png; path = "../../../Downloads/documents-export-2015-06-04 (1)/Trends_ToolbarIcon_2x.png"; sourceTree = "<group>"; };
 		A2F6326F1B215990005134A9 /* Peekly_LaunchImage_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Peekly_LaunchImage_2x.png; path = ../../../Downloads/Peekly_LaunchImage_2x.png; sourceTree = "<group>"; };
 		A2F632721B215ADC005134A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A2F632741B216BB7005134A9 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		A2F632751B216BB7005134A9 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		A2F6327A1B216CC6005134A9 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		A2F6327B1B216CC6005134A9 /* UIViewController+FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FourthViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,15 +115,12 @@
 		A2E60B631B1FD61C008F3AE1 /* Peekly */ = {
 			isa = PBXGroup;
 			children = (
+				A2F632771B216C78005134A9 /* ViewControllers */,
 				A28E18101B20B91300404801 /* HMSegmentedControl.h */,
 				A28E18111B20B91300404801 /* HMSegmentedControl.m */,
 				A2E60B681B1FD61C008F3AE1 /* AppDelegate.h */,
 				A2E60B691B1FD61C008F3AE1 /* AppDelegate.m */,
-				A2E60B6B1B1FD61C008F3AE1 /* FirstViewController.h */,
-				A2E60B6C1B1FD61C008F3AE1 /* FirstViewController.m */,
-				A2E60B6E1B1FD61C008F3AE1 /* SecondViewController.h */,
 				A2F632711B215ADC005134A9 /* Main.storyboard */,
-				A2E60B6F1B1FD61C008F3AE1 /* SecondViewController.m */,
 				A28E18131B20C3FD00404801 /* PeeklyTableCell.xib */,
 				A2E60B741B1FD61C008F3AE1 /* Images.xcassets */,
 				A2E60B761B1FD61C008F3AE1 /* LaunchScreen.xib */,
@@ -158,6 +161,21 @@
 				A2E60B821B1FD61C008F3AE1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A2F632771B216C78005134A9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A2E60B6B1B1FD61C008F3AE1 /* FirstViewController.h */,
+				A2E60B6C1B1FD61C008F3AE1 /* FirstViewController.m */,
+				A2E60B6E1B1FD61C008F3AE1 /* SecondViewController.h */,
+				A2E60B6F1B1FD61C008F3AE1 /* SecondViewController.m */,
+				A2F632741B216BB7005134A9 /* ThirdViewController.h */,
+				A2F632751B216BB7005134A9 /* ThirdViewController.m */,
+				A2F6327A1B216CC6005134A9 /* FourthViewController.h */,
+				A2F6327B1B216CC6005134A9 /* UIViewController+FourthViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +289,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2E60B701B1FD61C008F3AE1 /* SecondViewController.m in Sources */,
+				A2F632761B216BB7005134A9 /* ThirdViewController.m in Sources */,
+				A2F6327C1B216CC6005134A9 /* UIViewController+FourthViewController.m in Sources */,
 				A2E60B6A1B1FD61C008F3AE1 /* AppDelegate.m in Sources */,
 				A2E60B6D1B1FD61C008F3AE1 /* FirstViewController.m in Sources */,
 				A2E60B671B1FD61C008F3AE1 /* main.m in Sources */,

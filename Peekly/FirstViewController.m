@@ -38,12 +38,16 @@
     
     
     
-    titlearray = [[NSMutableArray alloc]initWithObjects:@"One", @"two", @"three",nil];
+    titlearray = [[NSMutableArray alloc]initWithObjects:@"One", @"two", @"three", nil];
     subtitlearray = [[NSMutableArray alloc]initWithObjects:@"1", @"2", @"3", nil];
     
     //Create the communication and private feature to switch
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat viewWidth = screenRect.size.width;
+    CGRect Rect= self.view.bounds;
+    float widthScreen = Rect.size.width;
+    
+
+    /*CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat viewWidth = screenRect.size.width;*/
     HMSegmentedControl *segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Community", @"Private"]];
     segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
     segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
@@ -51,12 +55,9 @@
     segmentedControl.verticalDividerEnabled = YES;
     segmentedControl.verticalDividerColor = [UIColor grayColor];
     segmentedControl.verticalDividerWidth = 1.0f;
-    segmentedControl.frame = CGRectMake(0, 20, viewWidth, 40);
-    [segmentedControl setAutoresizingMask: UIViewAutoresizingFlexibleLeftMargin   |
-                                           UIViewAutoresizingFlexibleRightMargin  |
-                                           UIViewAutoresizingFlexibleTopMargin    |
-                                           UIViewAutoresizingFlexibleBottomMargin |
-                                            UIViewAutoresizingFlexibleWidth];
+    segmentedControl.frame = CGRectMake(0, 0, widthScreen, 40);
+    [segmentedControl setAutoresizingMask:                                            UIViewAutoresizingFlexibleTopMargin|
+     UIViewAutoresizingFlexibleBottomMargin];
     [segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
     [self.comm_priv_View addSubview:segmentedControl];
 
@@ -65,8 +66,8 @@
 
 }
 
+
 -(void)awakeFromNib {
-    [[UINavigationBar appearance] setFrame:CGRectMake(0, 0, 320, 500)];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(72/255.0) green:(167/255.0) blue:(192/255.0) alpha:1]];
     [self.navigationController.navigationBar setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
@@ -86,6 +87,7 @@
     return 1;
 }
 
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [titlearray count];
@@ -94,7 +96,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellidentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellidentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellidentifier forIndexPath:indexPath];
     cell.textLabel.text = [titlearray objectAtIndex:indexPath.row];
     
     cell.detailTextLabel.text = [subtitlearray objectAtIndex:indexPath.row];

@@ -8,12 +8,14 @@
 
 #import "FirstViewController.h"
 #import "HMSegmentedControl.h"
+#import "PeeklyTableCell.h"
 
 @interface FirstViewController ()
 {
     
     NSMutableArray *titlearray;
     NSMutableArray *subtitlearray;
+    float widthScreen;
     
 }
 @end
@@ -37,21 +39,22 @@
     
     
     
-    
     titlearray = [[NSMutableArray alloc]initWithObjects:@"One", @"two", @"three", nil];
     subtitlearray = [[NSMutableArray alloc]initWithObjects:@"1", @"2", @"3", nil];
     
     //Create the communication and private feature to switch
     CGRect Rect= self.view.bounds;
-    float widthScreen = Rect.size.width;
+     widthScreen = Rect.size.width;
     
-
-    /*CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat viewWidth = screenRect.size.width;*/
+    //Segmented Controller
     HMSegmentedControl *segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Community", @"Private"]];
     segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+    segmentedControl.selectionIndicatorColor = [UIColor colorWithRed:(73/255.0) green:(158/255.0) blue:(255/255.0) alpha:1];
+
+    segmentedControl.backgroundColor = [UIColor whiteColor];
     segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
-    segmentedControl.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithRed:(72/255.0) green:(167/255.0) blue:(192/255.0) alpha:1]};
+    segmentedControl.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithRed:(73/255.0) green:(158/255.0) blue:(255/255.0) alpha:1]};
+    
     segmentedControl.verticalDividerEnabled = YES;
     segmentedControl.verticalDividerColor = [UIColor grayColor];
     segmentedControl.verticalDividerWidth = 1.0f;
@@ -62,16 +65,15 @@
     [self.comm_priv_View addSubview:segmentedControl];
 
     
-    //[self setNeedsStatusBarAppearanceUpdate];
 
 }
 
 
 -(void)awakeFromNib {
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(72/255.0) green:(167/255.0) blue:(192/255.0) alpha:1]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(73/255.0) green:(158/255.0) blue:(255/255.0) alpha:1]];
     [self.navigationController.navigationBar setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIFont fontWithName:@"CaviarDreams" size:28], NSFontAttributeName,
+      [UIFont fontWithName:@"CaviarDreams-Bold" size:18], NSFontAttributeName,
       [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
 }
 
@@ -95,22 +97,34 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellidentifier = @"Cell";
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellidentifier forIndexPath:indexPath];
-    cell.textLabel.text = [titlearray objectAtIndex:indexPath.row];
+        static NSString *simpleTableIdentifier = @"PeeklyTableCell";
+        
+        PeeklyTableCell *cell = (PeeklyTableCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PeeklyTableCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        cell.nameLabel.adjustsFontSizeToFitWidth = YES;//Makes sure the font size readjusts size
+        cell.nameLabel.text = @"Texas A&M University"; //Name of group label
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"testImage.jpg"]]; //Group label image
+        imageView.frame = CGRectMake(0, 0, widthScreen, 80);
+        imageView.alpha = 1.0; //opacity of the cell
+        cell.backgroundView = imageView; //setting the cell to be this image
+        cell.pointsLabel.text = @"+1000"; //Group points label (Must add the + in front"
+        cell.pointsLabel.adjustsFontSizeToFitWidth = YES; //Makes sure the font size readjusts the size
     
-    cell.detailTextLabel.text = [subtitlearray objectAtIndex:indexPath.row];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TAMU.jpg"]]; //changing every background cell to be this image
-    imageView.alpha = 0.5; //opacity of the cell
-    cell.backgroundView = imageView; //setting the cell to be this image
+        return cell;
     
     
     
-    return cell;
+    
     
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //Hard coded to check the titleArray array to get the row selected
     NSString *value = [titlearray objectAtIndex:indexPath.row];
     NSString *selected = @"You've selected row ";
     UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"Row Selected" message:[selected stringByAppendingString:value] delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];

@@ -1,14 +1,14 @@
 //
-//  PeeklyTableCell.m
+//  MyGroupsTableCell.m
 //  Peekly
 //
 //  Created by Karan Khatter on 6/5/15.
 //  Copyright (c) 2015 Fibrsoft. All rights reserved.
 //
 
-#import "PeeklyTableCell.h"
+#import "MyGroupsTableCell.h"
 
-@implementation PeeklyTableCell
+@implementation MyGroupsTableCell
 @synthesize nameLabel = _nameLabel;
 @synthesize pointsLabel = _pointsLabel;
 @synthesize backgroundImageView = _backgroundImageView;

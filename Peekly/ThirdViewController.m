@@ -29,7 +29,6 @@
     CGRect Rect= self.view.bounds;
     widthScreen = Rect.size.width;
     
-    //Segment Control
     //Segmented Controller
     HMSegmentedControl *segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Notification", @"My Peeks"]];
     segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
@@ -38,7 +37,7 @@
     segmentedControl.backgroundColor = [UIColor whiteColor];
     segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
     segmentedControl.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithRed:(73/255.0) green:(158/255.0) blue:(255/255.0) alpha:1]};
-    
+    segmentedControl.selectionIndicatorHeight = 1.5f;
     segmentedControl.verticalDividerEnabled = YES;
     segmentedControl.verticalDividerColor = [UIColor grayColor];
     segmentedControl.verticalDividerWidth = 1.0f;

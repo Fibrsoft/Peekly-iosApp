@@ -7,16 +7,21 @@
 //
 
 #import "SecondViewController.h"
-#import "PeeklyTableCell.h"
+#import "MyGroupsTableCell.h"
 
 @interface SecondViewController () {
     NSMutableArray *groupNames;
     float widthScreen;
+    NSMutableArray *titlearray;
+    
 }
+
+
 
 @end
 
 @implementation SecondViewController
+@synthesize trendTableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,8 +29,10 @@
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIFont fontWithName:@"CaviarDreams-Bold" size:18], NSFontAttributeName,
       [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
-    self.trendTableView.delegate = self;
-    self.trendTableView.dataSource = self;
+    trendTableView.delegate = self;
+    trendTableView.dataSource = self;
+    
+    titlearray = [[NSMutableArray alloc]initWithObjects:@"One", @"two", @"three", nil];
     
     //Get width of screen
     CGRect Rect= self.view.bounds;
@@ -33,27 +40,32 @@
     
     //Table View Current Groups
     groupNames = [[NSMutableArray alloc]initWithObjects:@"Trend 1", @"Trend 2", @"Trend 3", nil];
+    
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
+
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     return 1;
 }
 
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [groupNames count];
+    return [titlearray count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"PeeklyTableCell";
+    static NSString *simpleTableIdentifier = @"MyGroupsTableCell";
     
-    PeeklyTableCell *cell = (PeeklyTableCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    MyGroupsTableCell *cell = (MyGroupsTableCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil)
     {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PeeklyTableCell" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MyGroupsTableCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
     cell.nameLabel.adjustsFontSizeToFitWidth = YES;//Makes sure the font size readjusts size
@@ -62,20 +74,21 @@
     imageView.frame = CGRectMake(0, 0, widthScreen, 80);
     imageView.alpha = 1.0; //opacity of the cell
     cell.backgroundView = imageView; //setting the cell to be this image
-    imageView.center = imageView.superview.center;
     cell.pointsLabel.text = @"+1000"; //Group points label (Must add the + in front"
     cell.pointsLabel.adjustsFontSizeToFitWidth = YES; //Makes sure the font size readjusts the size
     
     return cell;
     
     
+    
+    
+    
 }
-
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //Hard coded to check the titleArray array to get the row selected
-    NSString *value = [groupNames objectAtIndex:indexPath.row];
+    NSString *value = [titlearray objectAtIndex:indexPath.row];
     NSString *selected = @"You've selected row ";
     UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"Row Selected" message:[selected stringByAppendingString:value] delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
     

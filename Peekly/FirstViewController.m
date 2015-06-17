@@ -8,13 +8,29 @@
 
 #import "FirstViewController.h"
 #import "HMSegmentedControl.h"
-#import "PeeklyTableCell.h"
+#import "MyGroupsTableCell.h"
 
 @interface FirstViewController ()
 {
     
     NSMutableArray *titlearray;
     NSMutableArray *subtitlearray;
+    
+    NSMutableArray *groupTitleNames;
+    NSMutableArray *groupTitleImages;
+    
+    
+    NSMutableArray *commGroupTitleNames;
+    NSMutableArray *commGroupTileImages;
+    
+    
+    NSMutableArray *privGroupTitleNames;
+    NSMutableArray *privGroupTitleImages;
+    
+    UIBarButtonItem *closeButton;
+    
+    int populateTableViewIndex;
+    
     float widthScreen;
     
 }
@@ -29,7 +45,13 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+   
+     closeButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGroupFunction)];
+    closeButton.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = nil;
+    
     [_comm_priv_View setAutoresizesSubviews:TRUE];
+    populateTableViewIndex = 0;
     
     
     CGFloat width = [[UIScreen mainScreen] bounds].size.width;
@@ -37,10 +59,14 @@
     newFrame.size.width = width;
     [_comm_priv_View setFrame:newFrame];
     
+    commGroupTitleNames = [[NSMutableArray alloc]initWithObjects:@"Baseball", @"Basketball", @"Beach Relaxing", @"Boating", @"Camping", @"Cars", @"Football", nil];
+    commGroupTileImages = [[NSMutableArray alloc]initWithObjects:@"Baseball_GroupTile.png", @"Basketball_GroupTile.png", @"BeachRelaxing_GroupTile.png", @"Boating_GroupTile.png", @"Camping_GroupTile.png", @"Cars_GroupTile.png", @"Football_GroupTile.png", nil];
     
+    privGroupTitleNames = [[NSMutableArray alloc]initWithObjects:@"Golf", @"Mountain Activities", @"Offroad Activites", @"Shopping", @"Snow Activities", @"Water Activities", nil];
+    privGroupTitleImages = [[NSMutableArray alloc]initWithObjects:@"Golf_GroupTile.png", @"MountainActivities_GroupTile.png", @"OffroadActivities_GroupTile.png", @"ShoppingCart_GroupTile.png", @"Snow_GroupTile.png", @"WaterActivities_GroupTile.png", nil];
     
-    titlearray = [[NSMutableArray alloc]initWithObjects:@"One", @"two", @"three", nil];
-    subtitlearray = [[NSMutableArray alloc]initWithObjects:@"1", @"2", @"3", nil];
+    groupTitleNames = commGroupTitleNames;
+    groupTitleImages = commGroupTileImages;
     
     //Create the communication and private feature to switch
     CGRect Rect= self.view.bounds;
@@ -50,7 +76,7 @@
     HMSegmentedControl *segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Community", @"Private"]];
     segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
     segmentedControl.selectionIndicatorColor = [UIColor colorWithRed:(73/255.0) green:(158/255.0) blue:(255/255.0) alpha:1];
-
+    segmentedControl.selectionIndicatorHeight = 1.5f;
     segmentedControl.backgroundColor = [UIColor whiteColor];
     segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
     segmentedControl.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithRed:(73/255.0) green:(158/255.0) blue:(255/255.0) alpha:1]};
@@ -78,7 +104,6 @@
 }
 
 
-
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
@@ -92,22 +117,22 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [titlearray count];
+    return[groupTitleNames count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        static NSString *simpleTableIdentifier = @"PeeklyTableCell";
         
-        PeeklyTableCell *cell = (PeeklyTableCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        static NSString *simpleTableIdentifier = @"MyGroupsTableCell";
+        MyGroupsTableCell *cell = (MyGroupsTableCell *)[self.tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
         if (cell == nil)
         {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PeeklyTableCell" owner:self options:nil];
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MyGroupsTableCell" owner:self options:nil];
             cell = [nib objectAtIndex:0];
         }
         cell.nameLabel.adjustsFontSizeToFitWidth = YES;//Makes sure the font size readjusts size
-        cell.nameLabel.text = @"Texas A&M University"; //Name of group label
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"testImage.jpg"]]; //Group label image
+        cell.nameLabel.text = [groupTitleNames objectAtIndex:indexPath.row]; //Name of group label
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[groupTitleImages objectAtIndex:indexPath.row]]]; //Group label image
         imageView.frame = CGRectMake(0, 0, widthScreen, 80);
         imageView.alpha = 1.0; //opacity of the cell
         cell.backgroundView = imageView; //setting the cell to be this image
@@ -122,10 +147,15 @@
     
 }
 
+-(void)addGroupFunction {
+    
+    [self performSegueWithIdentifier:(@"addGroup") sender:self];
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //Hard coded to check the titleArray array to get the row selected
-    NSString *value = [titlearray objectAtIndex:indexPath.row];
+    NSString *value = [commGroupTitleNames objectAtIndex:indexPath.row];
     NSString *selected = @"You've selected row ";
     UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"Row Selected" message:[selected stringByAppendingString:value] delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
     
@@ -138,33 +168,17 @@
 }
 
 
-- (IBAction)segmentController:(id)sender {
-    UISegmentedControl *toggleNav = (UISegmentedControl *)sender;
-    if (toggleNav.selectedSegmentIndex == 1) {
-        _firstView.text = @"Private";
-        titlearray = [[NSMutableArray alloc]initWithObjects:@"Private Friend 1", @"Private Friend 2", @"Private Friend 3",nil];
-        subtitlearray = [[NSMutableArray alloc]initWithObjects:@"1 friend", @"2 friend", @"3 friend", nil];
-        [self.tableView reloadData];
-    }
-    else {
-        _firstView.text = @"community";
-        titlearray = [[NSMutableArray alloc]initWithObjects:@"One", @"two", @"three",nil];
-        subtitlearray = [[NSMutableArray alloc]initWithObjects:@"1", @"2", @"3", nil];
-        [self.tableView reloadData];
-    }
-
-}
-
 - (void)segmentedControlChangedValue:(HMSegmentedControl *)segmentedControl {
     if (segmentedControl.selectedSegmentIndex == 1) {
-        titlearray = [[NSMutableArray alloc]initWithObjects:@"Private Friend 1", @"Private Friend 2", @"Private Friend 3",nil];
-        subtitlearray = [[NSMutableArray alloc]initWithObjects:@"1 friend", @"2 friend", @"3 friend", nil];
+        self.navigationItem.rightBarButtonItem = closeButton;
+        groupTitleNames = privGroupTitleNames;
+        groupTitleImages = privGroupTitleImages;
         [self.tableView reloadData];
     }
     else {
-        _firstView.text = @"community";
-        titlearray = [[NSMutableArray alloc]initWithObjects:@"One", @"two", @"three",nil];
-        subtitlearray = [[NSMutableArray alloc]initWithObjects:@"1", @"2", @"3", nil];
+        self.navigationItem.rightBarButtonItem = nil;
+        groupTitleNames = commGroupTitleNames;
+        groupTitleImages = commGroupTileImages;
         [self.tableView reloadData];
     }
 

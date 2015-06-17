@@ -1,5 +1,5 @@
 //
-//  PeeklyTableCell.h
+//  MyGroupsTableCell.h
 //  Peekly
 //
 //  Created by Karan Khatter on 6/5/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PeeklyTableCell : UITableViewCell
+@interface MyGroupsTableCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *pointsLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;

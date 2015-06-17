@@ -45,26 +45,27 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-   
-     closeButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGroupFunction)];
+    //Adding "addGroup" button for private
+    closeButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGroupFunction)];
     closeButton.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = nil;
     
+    //Miscellaneous
     [_comm_priv_View setAutoresizesSubviews:TRUE];
     populateTableViewIndex = 0;
     
-    
+    //Set the width of the screen/frame
     CGFloat width = [[UIScreen mainScreen] bounds].size.width;
     CGRect newFrame = _comm_priv_View.frame;
     newFrame.size.width = width;
     [_comm_priv_View setFrame:newFrame];
     
+    //Initialize the comm and priv group titles *******BACKEND POPULATED******
     commGroupTitleNames = [[NSMutableArray alloc]initWithObjects:@"Baseball", @"Basketball", @"Beach Relaxing", @"Boating", @"Camping", @"Cars", @"Football", nil];
     commGroupTileImages = [[NSMutableArray alloc]initWithObjects:@"Baseball_GroupTile.png", @"Basketball_GroupTile.png", @"BeachRelaxing_GroupTile.png", @"Boating_GroupTile.png", @"Camping_GroupTile.png", @"Cars_GroupTile.png", @"Football_GroupTile.png", nil];
     
     privGroupTitleNames = [[NSMutableArray alloc]initWithObjects:@"Golf", @"Mountain Activities", @"Offroad Activites", @"Shopping", @"Snow Activities", @"Water Activities", nil];
     privGroupTitleImages = [[NSMutableArray alloc]initWithObjects:@"Golf_GroupTile.png", @"MountainActivities_GroupTile.png", @"OffroadActivities_GroupTile.png", @"ShoppingCart_GroupTile.png", @"Snow_GroupTile.png", @"WaterActivities_GroupTile.png", nil];
-    
     groupTitleNames = commGroupTitleNames;
     groupTitleImages = commGroupTileImages;
     

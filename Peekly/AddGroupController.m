@@ -20,6 +20,7 @@
     float widthScreen;
     NSString *groupName;
     NSString *groupDescription;
+
     HMSegmentedControl *segmentedControl;
     int currentTab;
 
@@ -54,6 +55,8 @@
     _labelAddGroup.adjustsFontSizeToFitWidth = YES;
     self.groupDescription.layer.borderWidth = 1.0f;
     self.groupDescription.layer.borderColor = [[UIColor blackColor] CGColor];
+    _cancelButton.tintColor = [UIColor whiteColor];
+    
     
     
     //Figure out screen size
@@ -202,6 +205,7 @@
     }
     
 }
+
 
 
 @end

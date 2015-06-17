@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *groupNextButtonOutlet;
 - (IBAction)groupNameSet:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *groupDescription;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 
 
 

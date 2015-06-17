@@ -131,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="1725" y="-453"/>
         </scene>
-        <!--Add Group Controller-->
+        <!--Create Group-->
         <scene sceneID="xAq-op-Zkg">
             <objects>
                 <viewController id="upS-sk-f2V" customClass="AddGroupController" sceneMemberID="viewController">
@@ -140,6 +140,7 @@
                         <viewControllerLayoutGuide type="bottom" id="a9u-vK-7bT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EEO-aN-rRJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRs-TY-A9G">
@@ -264,11 +265,16 @@
                                         <exclude reference="tee-wy-FmZ"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="DDu-BN-0aa"/>
-                                        <exclude reference="ugM-tg-Vos"/>
                                         <exclude reference="GDX-lu-tmD"/>
                                         <exclude reference="ayY-sX-3Hn"/>
                                         <exclude reference="hcX-UR-xot"/>
+                                        <exclude reference="DDu-BN-0aa"/>
+                                        <exclude reference="ugM-tg-Vos"/>
+                                        <exclude reference="DHZ-TW-dPZ"/>
+                                        <exclude reference="Sue-y0-fuP"/>
+                                        <exclude reference="VeU-8Z-1Cp"/>
+                                        <exclude reference="bPg-OM-qo5"/>
+                                        <exclude reference="hPV-T2-Xif"/>
                                         <exclude reference="Jp0-Zc-1LF"/>
                                         <exclude reference="osJ-SZ-xDa"/>
                                         <exclude reference="AeU-OB-Vhd"/>
@@ -276,11 +282,6 @@
                                         <exclude reference="VtQ-5Y-bpt"/>
                                         <exclude reference="ak6-71-AAb"/>
                                         <exclude reference="fpH-S1-hEt"/>
-                                        <exclude reference="DHZ-TW-dPZ"/>
-                                        <exclude reference="Sue-y0-fuP"/>
-                                        <exclude reference="VeU-8Z-1Cp"/>
-                                        <exclude reference="bPg-OM-qo5"/>
-                                        <exclude reference="hPV-T2-Xif"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -292,11 +293,16 @@
                                         <include reference="tee-wy-FmZ"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="DDu-BN-0aa"/>
-                                        <include reference="ugM-tg-Vos"/>
                                         <include reference="GDX-lu-tmD"/>
                                         <include reference="ayY-sX-3Hn"/>
                                         <include reference="hcX-UR-xot"/>
+                                        <include reference="DDu-BN-0aa"/>
+                                        <include reference="ugM-tg-Vos"/>
+                                        <include reference="DHZ-TW-dPZ"/>
+                                        <include reference="Sue-y0-fuP"/>
+                                        <include reference="VeU-8Z-1Cp"/>
+                                        <include reference="bPg-OM-qo5"/>
+                                        <include reference="hPV-T2-Xif"/>
                                         <include reference="Jp0-Zc-1LF"/>
                                         <include reference="osJ-SZ-xDa"/>
                                         <include reference="AeU-OB-Vhd"/>
@@ -304,11 +310,6 @@
                                         <include reference="VtQ-5Y-bpt"/>
                                         <include reference="ak6-71-AAb"/>
                                         <include reference="fpH-S1-hEt"/>
-                                        <include reference="DHZ-TW-dPZ"/>
-                                        <include reference="Sue-y0-fuP"/>
-                                        <include reference="VeU-8Z-1Cp"/>
-                                        <include reference="bPg-OM-qo5"/>
-                                        <include reference="hPV-T2-Xif"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -360,8 +361,15 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="6ul-ZK-ZMp"/>
+                    <navigationItem key="navigationItem" title="Create Group" id="6ul-ZK-ZMp">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="CL4-Kg-2L7">
+                            <connections>
+                                <segue destination="49e-Tb-3d3" kind="showDetail" id="tHn-jc-2AJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="CL4-Kg-2L7" id="bSD-Qp-Nzf"/>
                         <outlet property="groupDescription" destination="Hjs-Lz-GzW" id="fuC-dV-IHK"/>
                         <outlet property="groupName" destination="euy-F3-DGI" id="FZq-BW-CtU"/>
                         <outlet property="groupNextButtonOutlet" destination="EL2-kD-623" id="1mF-6y-ox1"/>
@@ -897,4 +905,7 @@
         <image name="MyStuff_ToolbarIcon_2x" width="25" height="25"/>
         <image name="Trends_ToolbarIcon_2x" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="tHn-jc-2AJ"/>
+    </inferredMetricsTieBreakers>
 </document>
